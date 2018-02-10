@@ -6,7 +6,7 @@ import timeit
 from time import time
 
 
-statsd = StatsClient()
+#statsd = StatsClient()
 os.remove("dice2.log")
 logging.basicConfig(filename='dice2.log',level=logging.DEBUG)
 
