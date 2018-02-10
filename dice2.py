@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import logging
 import os
-from statsd import StatsClient
+#from statsd import StatsClient
 import timeit
 from time import time
 
