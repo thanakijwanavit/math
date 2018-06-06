@@ -81,9 +81,12 @@ def rollDice2(requiredscore,numberofdice,face):
 	match =listfaces(dice,face,requiredscore)
 	return match
 
-
+requiredscore = 30
+numberofdice = 4
+face = 9
 #print(rollDice([1,1,1],6))
 t0=time()
-print(rollDice2(10,5,6))
+print('calculating with %s dices of %s faces at the required score of %s' % (requiredscore, numberofdice, face))
+print(rollDice2(requiredscore,numberofdice,face))
 t1=time()
 print('the function took %.2f seconds' % (t1-t0))
