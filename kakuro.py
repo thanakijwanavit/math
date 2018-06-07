@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 import logging
+from time import time
 
 
-# In[2]:
+# In[3]:
 
 
 def sumarray(data):
     return sum(data)
 
 
-# In[3]:
+# In[4]:
 
 
 def gendice(length):
@@ -17,7 +18,7 @@ def gendice(length):
     return data
 
 
-# In[4]:
+# In[5]:
 
 
 def isduplicate(A):
@@ -30,34 +31,37 @@ def isduplicate(A):
     return 0
 
 
-# In[5]:
+# In[6]:
 
 
 def checkrepeat(A):
     temp = []
     output = []
+    oappend = output.append
+    tappend = temp.append
     for index, item in enumerate(A):
         if item in temp:
-            output.append(item)
+            oappend(item)
         else:
-            temp.append(item)
+            tappend(item)
     return output
 
 
-# In[6]:
+# In[7]:
 
 
 def listnumbers(list1,possible):
     output=[]
+    oappend = output.append
     flat_list = [item for sublist in list1 for item in sublist]
     for i in possible:
         if i in flat_list:
-            output.append(i)
+            oappend(i)
     return output
             
 
 
-# In[7]:
+# In[8]:
 
 
 def listfaces(dice,requiredscore,index=99,match=0,list=[],bigdata=[],possible=[1,2,3,4,5,6,7,8,9]):
@@ -76,7 +80,7 @@ def listfaces(dice,requiredscore,index=99,match=0,list=[],bigdata=[],possible=[1
     return {'dice':dice,'bigdata':bigdata,'listfeed':listfeed,'possibilities':len(bigdata)}
 
 
-# In[8]:
+# In[9]:
 
 
 def listpossible(toplength,topsum,sidelength,sidesum,impossible=[]):
@@ -90,10 +94,14 @@ def listpossible(toplength,topsum,sidelength,sidesum,impossible=[]):
     return {'toppossible':toppossible,'sidepossible':sidepossible,'dualpossible':dualpossible}
 
 
-# In[ ]:
+# In[19]:
 
 
-print(listpossible(2,8,9,45,impossible=[]))
+t0 = time()
+var=listpossible(2,13,2,14,impossible=[])
+t1 = time()
+print(var)
+print ('the function took %s seconds to run' % (t1-t0))
 
 
 # In[ ]:
